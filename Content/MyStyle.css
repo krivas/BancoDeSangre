@@ -1,0 +1,11 @@
+﻿.jumbotron {
+   
+    background-image:url("../Pictures/Fondo.jpg");
+    background-size:100% 100%;
+        padding:15%;
+        margin:1%;
+  
+}
+body {
+    background-color:#fffffff;
+}
