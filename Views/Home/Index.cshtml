@@ -8,8 +8,6 @@
     <link href="../../Content/MyStyle.css" rel="stylesheet" type="text/css" />
 </head>
     <body>
-
-
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
         </div>
@@ -20,12 +18,12 @@
                 <div class="col-md-4">
                     <h2>Requisitos para Donar</h2>
                     <p>No todas las personas pueden donar sangre.Verifica si cumple con los requisitos para donar sangre.De ser asi no dejes de ayudar a tus amigos y familiares. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">Ver mas detalles &raquo;</a></p>
+                    @Html.ActionLink("Ver mas detalles", "Requisitos", "Static")
                 </div>
                 <div class="col-md-4">
                     <h2>Registrate</h2>
                     <p>Create una cuenta! y empieza a explorar nuestra aplicacion. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">Click aqui para registrarte &raquo;</a></p>
+                    @Html.ActionLink("Click aqui para registrarte", "User", "Register")
                 </div>
                 <div class="col-md-4">
                     <h2>Inicia Sesion</h2>

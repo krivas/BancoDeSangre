@@ -1,0 +1,55 @@
+﻿@model  Banco_de_Sangre.Models.Client
+@{
+
+}
+
+
+@using (Html.BeginForm("Create", "Register", FormMethod.Post, new { @class = "well" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h2 class="text-center">Registrar Usuario</h2>
+    <div class="form-group">
+        <label for="Name">Nombre:</label>
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="LastName">Apellido:</label>
+        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Contrasena:</label>
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="phone">Telefono:</label>
+        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label for="email">Correo Electronico:</label>
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label for="bloodType">Selecciona el Tipo de Sangre:</label>
+        @Html.EnumDropDownListFor(x => x.BloodType, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RhFactor, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group" style="height:65px;">
+        <label for="bloodType">Seleccionar Factor RH</label>
+        @Html.DropDownListFor(m => m.RhFactor,
+            new SelectList(Enum.GetValues(typeof(Banco_de_Sangre.Models.Client.Factors))), new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RhFactor, "", new { @class = "text-danger" })
+        <button type="submit" class="btn btn-primary btn-md pull-right" style="margin-top:5px;">Aceptar</button>
+    </div>
+
+
+
+
+}

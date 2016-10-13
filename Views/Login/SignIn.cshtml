@@ -21,16 +21,21 @@
         </section>
         
             <section class="col-md-5 col-md-offset-2">
+                    @if (ViewBag.Error != null)
+                    {
+                        <span class="alert alert-danger">@ViewBag.Error</span>
+                    }
+
                 	<h1>BloodSavior</h1>
                 	<p>Iniciar Sesion</p>
-                    <form role="form">
+                    <form method="post" action="@Url.Action("SignIn", "Login")" role="form">
                   <div class="form-group">
                         <label for="email">User:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter username">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter username">
                 </div>
                  <div class="form-group">
                         <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
                 </div>
                  <div class="checkbox">
                         <label><input type="checkbox"> Remember me</label>
